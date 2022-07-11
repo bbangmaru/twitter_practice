@@ -1,4 +1,5 @@
-import { initializeApp } from 'firebase/app';
+import firebase from 'firebase/compat/app';
+import "firebase/compat/auth";
 
 // TODO: Replace the following with your app's Firebase project configuration
 const firebaseConfig = {
@@ -10,6 +11,6 @@ const firebaseConfig = {
     appId: process.env.REACT_APP_APP_ID
   };
 
-const app = initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 
-export default app;
+export const authService = firebase.auth();
